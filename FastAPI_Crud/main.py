@@ -3,10 +3,13 @@ from user import routes as AdminRoute
 from tortoise.contrib.fastapi import register_tortoise
 from configs.connection import DATABASE_URL
 from user import api as apiRoute
+from starlette.middleware.sessions import SessionMiddleware
+
 
 
 
 app=FastAPI()
+app.add_middleware(SessionMiddleware, secret_key="some-random-string", max_age=None)
 db_url=DATABASE_URL()
 
 
