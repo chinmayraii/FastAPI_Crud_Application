@@ -7,7 +7,16 @@
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Document</title>
 </head>
+
 <body>
+<script>
+{# Flashing message start here #}
+            {% for message in get_flashed_messages(request) %}
+                <div class="{{ message.category }}">{{ message.message }}</div>
+            {% endfor %})
+    {# Flashing message ends here #}
+</script>
+
      <form action="/add_registration" method='post'>
   
     <section class="vh-100 "
@@ -40,7 +49,7 @@
                  <button class="btn btn-outline-light btn-lg p-2 w-75" type="submit">Register</button>
                 </div>
 
-                <p class="text-center  mt-5 mb-0 text-white">Have already an account? <a href="ulogin"
+                <p class="text-center  mt-5 mb-0 text-white">Have already an account? <a href="/ulogin/"
                     class="fw-bold text-body"><u>Login here</u></a></p>
             </div>
           </div>
@@ -52,5 +61,8 @@
 </form>
 </body>
 </html>
+
+
+
 
 

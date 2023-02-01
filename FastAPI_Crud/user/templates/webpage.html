@@ -18,6 +18,14 @@
 </head>
 
 <body>
+<script>
+{# Flashing message start here #}
+            {% for message in get_flashed_messages(request) %}
+                <div class="{{ message.category }}">{{ message.message }}</div>
+            {% endfor %})
+    {# Flashing message ends here #}
+</script>
+
     <div class="container-fluid">
         <div class="bg-dark text-white">
             <h1 style="padding-left: 500px;">CRUD APPLICATION</h1>

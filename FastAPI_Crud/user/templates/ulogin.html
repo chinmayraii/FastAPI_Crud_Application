@@ -8,6 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+<script>
+{# Flashing message start here #}
+            {% for message in get_flashed_messages(request) %}
+                <div class="{{ message.category }}">{{ message.message }}</div>
+            {% endfor %})
+    {# Flashing message ends here #}
+</script>
+
     <form action="" method="post">
      <section class="vh-100 "
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -23,12 +31,12 @@
                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
       
                     <div class="form-outline form-white mb-4">
-                      <input type="text" id="typeEmailX" name="uname" class="form-control form-control-lg" />
-                      <label class="form-label" for="typeEmailX">User Name</label>
+                      <input type="email" id="typeEmailX" name="email" class="form-control form-control-lg" />
+                      <label class="form-label" for="typeEmailX">Email</label>
                     </div>
       
                     <div class="form-outline form-white mb-4">
-                      <input type="password" id="typePasswordX" name="pwd" class="form-control form-control-lg" />
+                      <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" />
                       <label class="form-label" for="typePasswordX">Password</label>
                     </div>
       
